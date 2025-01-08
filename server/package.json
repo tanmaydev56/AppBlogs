@@ -4,10 +4,12 @@
   "description": "blog app",
   "main": "server.js",
   "scripts": {
-    "start": "node serevr.js",
+    "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix ./client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm run build --prefix client",
+    "heroku-postbuild": "npm run build"
   },
   "author": "techinfoyt",
   "license": "ISC",
@@ -21,6 +23,7 @@
     "mongodb": "^6.12.0",
     "mongoose": "^6.10.0",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7"
   }
 }
